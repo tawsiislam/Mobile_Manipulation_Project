@@ -11,12 +11,6 @@ Tawsiful Islam tawsiful@kth.se
 Linus Lundvall llundv@kth.se
 """
 
-
-
-
-
-
-
 class BehaviourTree(ptr.trees.BehaviourTree):
 
 	def __init__(self):
@@ -54,10 +48,10 @@ class BehaviourTree(ptr.trees.BehaviourTree):
 		
 		b4 = pt.composites.Selector(
 			name="Rotate", 
-			children=[counter(29, "At door?"), go("Go to door!", 0, -1)])
+			children=[counter(29, "Facing table 2?"), go("Face table 2!", 0, -1)])
 		b5 = pt.composites.Selector(
 			name="Translate", 
-			children=[counter(10, "At door?"), go("Go to door!", 1, 0)])
+			children=[counter(10, "At table 2?"), go("Go to table 2!", 1, 0)])
 		b6 = PlaceCube("Place Cube",self.place_srv_nm)
 		b7 = pt.composites.Selector(
 			name="Rotate back", 
@@ -72,17 +66,12 @@ class BehaviourTree(ptr.trees.BehaviourTree):
 		beh_list = [b20,b0,b13,b1,b2,b3,b20_1,b14,b6,b1_1,b10,b17]
 		b18 = reset("Reset Cube",beh_list)
 		
-		
-		
-
 		b9 = RSequence(name="Going back sequence", children=[b7,b8])	# C-level fallback sequence
 		b15 = RSequence(name="Reset and going back sequence",children=[b17,b18])
 		
 		b11 = pt.composites.Selector(name="On table fallback", children=[b10, b9])
 		b16 = pt.composites.Selector(name="On table fallback and reset", children=[b10,b15])
 		
-		
-
 		# become the tree
 		tree = RSequence(name="Main sequence", children=[b20,b12,b0,b13,b1,b2,b3,b20_1,b14,b6,b1_1,b16])	# A-level
 		#tree = RSequence(name="Main sequence", children=[b20,b0,b1,b2,b3,b4,b5,b6,b11])	# C-level
