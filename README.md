@@ -31,9 +31,9 @@ Following video shows the robot localising itself and start its navigation to th
 https://user-images.githubusercontent.com/62840946/221252129-b96730d2-4b32-4cee-a0b4-a1674f8af2a1.mov
 
 ## Following codes existing in this repository
-![sm_students.py](https://github.com/tawsiislam/Mobile_Manipulation_Project/blob/main/sm_students.py) contains the Python scripts for the state machine.
+[sm_students.py](https://github.com/tawsiislam/Mobile_Manipulation_Project/blob/main/sm_students.py) contains the Python scripts for the state machine.
 
-![bt_students.py](https://github.com/tawsiislam/Mobile_Manipulation_Project/blob/main/bt_students.py) contains the main scripts for building the behaviour tree.
+[bt_students.py](https://github.com/tawsiislam/Mobile_Manipulation_Project/blob/main/bt_students.py) contains the main scripts for building the behaviour tree.
 
-![behaviours_student.py](https://github.com/tawsiislam/Mobile_Manipulation_Project/blob/main/behaviours_student.py) contains the implementations for localising, handling 
+[behaviours_student.py](https://github.com/tawsiislam/Mobile_Manipulation_Project/blob/main/behaviours_student.py) contains the implementations for localising, handling 
 kidnapping, navigation, and picking & placing by using ROS messages and services.
